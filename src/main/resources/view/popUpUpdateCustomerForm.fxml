@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="548.0" prefWidth="474.0" style="-fx-border-color: rgba(128,128,128,0.38);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.computerShop.controller.PopUpUpdateCustomerFormController">
+   <children>
+      <TextField fx:id="txtId" layoutX="88.0" layoutY="60.0" prefHeight="46.0" prefWidth="298.0" promptText="ID" style="-fx-background-color: white; -fx-border-color: rgba(128,128,128,0.38); -fx-border-radius: 10; -fx-background-radius: 10;" />
+      <TextField fx:id="txtName" layoutX="88.0" layoutY="124.0" prefHeight="46.0" prefWidth="298.0" promptText="NAME" style="-fx-background-color: white; -fx-border-color: rgba(128,128,128,0.38); -fx-border-radius: 10; -fx-background-radius: 10;" />
+      <TextField fx:id="txtAddress" layoutX="88.0" layoutY="187.0" prefHeight="46.0" prefWidth="298.0" promptText="ADDRESS" style="-fx-background-color: white; -fx-border-color: rgba(128,128,128,0.38); -fx-border-radius: 10; -fx-background-radius: 10;" />
+      <TextField fx:id="txtMobile" layoutX="88.0" layoutY="251.0" prefHeight="46.0" prefWidth="298.0" promptText="MOBILE" style="-fx-background-color: white; -fx-border-color: rgba(128,128,128,0.38); -fx-border-radius: 10; -fx-background-radius: 10;" />
+      <TextField fx:id="txtEmail" layoutX="88.0" layoutY="318.0" prefHeight="46.0" prefWidth="298.0" promptText="E-MAIL" style="-fx-background-color: white; -fx-border-color: rgba(128,128,128,0.38); -fx-border-radius: 10; -fx-background-radius: 10;" />
+      <Label layoutX="23.0" layoutY="9.0" text="UPDATE CUSTOMER">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="294.0" layoutY="468.0" onAction="#btnSaveOnAction" prefHeight="39.0" prefWidth="90.0" style="-fx-background-color: #16a085;" text="SAVE" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXButton>
+      <JFXButton layoutX="88.0" layoutY="468.0" onAction="#btnCancelOnAction" prefHeight="39.0" prefWidth="90.0" style="-fx-background-color: white; -fx-border-color: #16a085;" text="CANCEL" textFill="#16a085">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXButton>
+      <JFXButton layoutX="90.0" layoutY="391.0" onAction="#btnIdImageAddOnAction" prefHeight="39.0" prefWidth="292.0" style="-fx-background-color: white; -fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;" text="ID IMAGE" textFill="#360c0c">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXButton>
+      <JFXButton layoutX="424.0" layoutY="4.0" onAction="#btnCloseOnAction" prefHeight="39.0" prefWidth="31.0" styleClass="popup-button" stylesheets="@../css/Style.css" text=" " textFill="#aeaeae">
+         <graphic>
+            <ImageView fitHeight="22.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/icons8-close-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+   <effect>
+      <InnerShadow />
+   </effect>
+</AnchorPane>

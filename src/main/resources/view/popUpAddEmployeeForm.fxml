@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="384.0" prefWidth="613.0" style="-fx-border-color: BLACK;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.computerShop.controller.PopUpAddEmployeeFormController">
+   <children>
+      <JFXButton fx:id="btnAddImage" layoutX="74.0" layoutY="104.0" onAction="#btnAddImageOnAction" prefHeight="115.0" prefWidth="116.0" style="-fx-background-color: white; -fx-border-color: gray; -fx-background-radius: 200; -fx-border-radius: 200;" text=" " textFill="WHITE">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <graphic>
+            <ImageView fitHeight="41.0" fitWidth="43.0" onMouseClicked="#imgAddOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/icons8-add-image-30.png" />
+               </image>
+            </ImageView>
+         </graphic></JFXButton>
+      <TextField fx:id="txtId" layoutX="261.0" layoutY="23.0" prefHeight="39.0" prefWidth="280.0" promptText="ID" />
+      <TextField fx:id="txtName" layoutX="261.0" layoutY="66.0" prefHeight="39.0" prefWidth="280.0" promptText="NAME" />
+      <TextField fx:id="txtAddress" layoutX="261.0" layoutY="109.0" prefHeight="39.0" prefWidth="280.0" promptText="ADDRESS" />
+      <TextField fx:id="txtMobile" layoutX="261.0" layoutY="153.0" prefHeight="39.0" prefWidth="280.0" promptText="MOBILE" />
+      <TextField fx:id="txtEmail" layoutX="261.0" layoutY="196.0" prefHeight="39.0" prefWidth="280.0" promptText="E-MAIL" />
+      <Label layoutX="61.0" layoutY="8.0" text="ADD EMPLOYEE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtPosition" layoutX="261.0" layoutY="244.0" prefHeight="39.0" prefWidth="280.0" promptText="POSITION" />
+      <JFXButton fx:id="btnSave" layoutX="458.0" layoutY="310.0" onAction="#btnSaveOnAction" prefHeight="39.0" prefWidth="90.0" style="-fx-background-color: BLACK;" text="SAVE" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXButton>
+      <JFXButton layoutX="261.0" layoutY="310.0" onAction="#btnCancelOnAction" prefHeight="39.0" prefWidth="90.0" style="-fx-background-color: BLACK;" text="CANCEL" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXButton>
+      <ImageView fx:id="imgView" fitHeight="28.0" fitWidth="20.0" layoutX="51.0" layoutY="58.0" pickOnBounds="true" smooth="false">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <JFXButton layoutX="563.0" layoutY="5.0" onAction="#btnCloseOnAction" prefHeight="39.0" prefWidth="31.0" styleClass="popup-button" stylesheets="@../css/Style.css" text=" " textFill="#aeaeae">
+         <graphic>
+            <ImageView fitHeight="22.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/icons8-close-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>

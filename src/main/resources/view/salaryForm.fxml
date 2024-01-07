@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="677.0" prefWidth="1037.0" style="-fx-background-color: A29BFE38;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.computerShop.controller.SalaryFormController">
+   <children>
+      <Pane layoutX="693.0" layoutY="11.0" prefHeight="651.0" prefWidth="329.0" style="-fx-background-color: #16a085;">
+         <children>
+            <JFXButton buttonType="RAISED" layoutX="112.0" layoutY="559.0" onAction="#btnPayOnAction" prefHeight="43.0" prefWidth="106.0" style="-fx-background-color: black;" text="PAY" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <Pane layoutX="23.0" layoutY="26.0" prefHeight="347.0" prefWidth="284.0" style="-fx-background-color: white;">
+               <children>
+                  <ComboBox layoutX="10.0" layoutY="41.0" prefHeight="25.0" prefWidth="121.0" promptText="EMPLOYEE ID" />
+                  <TextField fx:id="txtEmployeeId" layoutX="131.0" layoutY="41.0" prefHeight="25.0" prefWidth="139.0" />
+                  <Label layoutX="10.0" layoutY="93.0" text="WORKING HOURS :">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="13.0" layoutY="123.0" text="OT HOURS             :">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="24.0" layoutY="274.0" text="TOTAL    :">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="13.0" layoutY="5.0" text="DATE      :">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblWorkingHours" layoutX="143.0" layoutY="93.0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblOtHours" layoutX="143.0" layoutY="123.0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblTotal" layoutX="140.0" layoutY="274.0">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblDate" layoutX="81.0" layoutY="6.0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <TextField fx:id="txtMoneyPerOtHour" layoutX="25.0" layoutY="457.0" prefHeight="43.0" prefWidth="284.0" promptText="OT HOUR" />
+            <TextField fx:id="txtMoneyPerHOur" layoutX="25.0" layoutY="405.0" prefHeight="43.0" prefWidth="284.0" promptText="PER HOUR" />
+         </children>
+      </Pane>
+      <ScrollPane layoutX="14.0" layoutY="10.0" prefHeight="651.0" prefWidth="661.0" />
+   </children>
+
+</AnchorPane>

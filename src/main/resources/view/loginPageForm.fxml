@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="loginPageAnchorPane" prefHeight="670.0" prefWidth="1250.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.computerShop.controller.LoginPageFormController">
+    <children>
+      <ImageView fx:id="imgLogo" fitHeight="526.0" fitWidth="894.0" layoutX="12.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/wp8450468.jpg" />
+         </image>
+      </ImageView>
+        <Pane layoutX="773.0" layoutY="83.0" opacity="0.13" prefHeight="472.0" prefWidth="399.0" style="-fx-background-color: white; -fx-background-radius: 10;" />
+        <Text fx:id="wrongPw" fill="#c30303" layoutX="850.0" layoutY="326.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User name or password can't be empty !!" wrappingWidth="245.47006225585938" />
+        <Pane layoutX="336.0" layoutY="22.0" />
+        <JFXButton layoutX="895.0" layoutY="466.0" prefHeight="33.0" prefWidth="159.0" style="-fx-background-color: GRA #2f3542Y; -fx-background-radius: 10; -fx-border-color: white; -fx-border-radius: 10;" text="Sign up for an account" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="9.0" />
+            </font>
+        </JFXButton>
+        <TextField fx:id="txtUserName" layoutX="850.0" layoutY="207.0" prefHeight="37.0" prefWidth="227.0" promptText="user name" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-background-color: gray;" />
+        <PasswordField fx:id="txtPassword" layoutX="850.0" layoutY="263.0" prefHeight="37.0" prefWidth="227.0" promptText="password" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-background-color: gray;" />
+        <JFXButton layoutX="914.0" layoutY="380.0" onAction="#btnLoginOnAction" prefHeight="33.0" prefWidth="105.0" style="-fx-background-color: #c0392b; -fx-background-radius: 10;" text="login" textFill="#fdfdfd" />
+        <Text fill="WHITE" layoutX="859.0" layoutY="353.0" onMouseClicked="#forgetPasswordOnMouseClicked" onMousePressed="#fogetPasswordOnMouseClicked" strokeType="OUTSIDE" strokeWidth="0.0" text="forget password" wrappingWidth="143.47003173828125">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Text>
+        <Line endX="76.0" endY="-0.490203857421875" layoutX="906.0" layoutY="360.0" startX="-55.33331298828125" startY="-0.490203857421875" stroke="#fdfdfd" />
+        <Line endX="34.66668701171875" endY="-0.4902191162109375" layoutX="895.0" layoutY="439.0" startX="-45.0" startY="-0.4902191162109375" stroke="WHITE" />
+        <Line endX="34.66668701171875" endY="-0.4902191162109375" layoutX="1067.0" layoutY="438.0" startX="-45.0" startY="-0.4902191162109375" stroke="WHITE" />
+        <Text fill="WHITE" layoutX="966.0" layoutY="443.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OR" wrappingWidth="20.13665771484375">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Text>
+        <Text fill="WHITE" layoutX="814.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="welcome back " wrappingWidth="299.47003173828125">
+            <font>
+                <Font name="System Bold" size="34.0" />
+            </font>
+        </Text>
+      <ImageView fx:id="miniLogoImg" fitHeight="116.0" fitWidth="159.0" layoutX="25.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/logo.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="1202.0" layoutY="2.0" onAction="#btnCloseOnAction" prefHeight="39.0" prefWidth="31.0" styleClass="popup-button" stylesheets="@../css/Style.css" text=" " textFill="#aeaeae">
+         <graphic>
+            <ImageView fitHeight="22.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/icons8-close-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+    </children>
+</AnchorPane>

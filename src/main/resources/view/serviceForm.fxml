@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="677.0" prefWidth="1037.0" style="-fx-background-color: A29BFE38;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.computerShop.controller.ServiceFormController">
+   <children>
+      <TableView layoutX="27.0" layoutY="321.0" prefHeight="349.0" prefWidth="1001.0">
+         <columns>
+            <TableColumn prefWidth="75.0" text="C1" />
+            <TableColumn prefWidth="75.0" text="C2" />
+         </columns>
+      </TableView>
+      <JFXButton layoutX="868.0" layoutY="248.0" prefHeight="48.0" prefWidth="156.0" style="-fx-background-color: #16a085;" text="ADD SERVICE ITEM" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <Pane layoutX="27.0" layoutY="54.0" prefHeight="235.0" prefWidth="526.0" style="-fx-background-color: GRAY;">
+         <children>
+            <Label layoutX="22.0" layoutY="14.0" text="SERVICE ITEM DETAILS" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <TextField layoutX="801.0" layoutY="34.0" prefHeight="28.0" prefWidth="149.0" />
+      <JFXButton layoutX="951.0" layoutY="34.0" style="-fx-border-color: GRAY;" text="SEARCH" />
+   </children>
+
+</AnchorPane>

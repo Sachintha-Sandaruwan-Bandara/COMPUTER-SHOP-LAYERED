@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="677.0" prefWidth="1037.0" style="-fx-background-color: A29BFE38;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.computerShop.controller.AttendanceFormController">
+   <children>
+      <TextField layoutX="767.0" layoutY="14.0" />
+      <ComboBox layoutX="917.0" layoutY="14.0" prefHeight="25.0" prefWidth="106.0" promptText="emp ID" />
+      <ScrollPane layoutX="13.0" layoutY="155.0" prefHeight="513.0" prefWidth="1008.0">
+         <content>
+            <AnchorPane prefHeight="507.0" prefWidth="1004.0">
+               <children>
+                  <VBox fx:id="vBox" layoutX="7.0" layoutY="6.0" prefHeight="79.0" prefWidth="989.0" />
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <Pane layoutX="14.0" layoutY="114.0" prefHeight="36.0" prefWidth="1008.0" style="-fx-background-color: white;" />
+      <Label layoutX="41.0" layoutY="124.0" text="ID">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="180.0" layoutY="124.0" text="DATE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="330.0" layoutY="124.0" text="IN TIME">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="454.0" layoutY="124.0" text="OUT TIME">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="592.0" layoutY="124.0" text="W HOURS">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="873.0" layoutY="124.0" text="ACTION">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="709.0" layoutY="123.0" text="EMP ID">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

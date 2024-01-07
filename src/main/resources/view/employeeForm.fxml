@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="677.0" prefWidth="1037.0" style="-fx-background-color: A29BFE38;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.computerShop.controller.EmployeeFormController">
+   <children>
+      <Pane layoutX="16.0" layoutY="24.0" prefHeight="284.0" prefWidth="666.0" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-radius: 15; -fx-background-radius: 15;">
+         <children>
+            <Circle fill="WHITE" layoutX="116.0" layoutY="164.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
+            <Pane layoutX="244.0" layoutY="73.0" prefHeight="182.0" prefWidth="390.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: gray;">
+               <children>
+                  <Label layoutX="32.0" layoutY="21.0" text="ID              :">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="32.0" layoutY="49.0" text="NAME       :">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="32.0" layoutY="79.0" text="ADDRESS  :">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="32.0" layoutY="108.0" text="E-MAIL      :">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="32.0" layoutY="141.0" text="MOBILE     :">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Text fx:id="id" layoutX="124.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="name" layoutX="124.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="address" layoutX="124.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="email" layoutX="124.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="mobile" layoutX="124.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+               </children></Pane>
+            <TextField fx:id="searchId" layoutX="787.0" layoutY="-14.0" onAction="#searchIdOnAction" prefHeight="28.0" prefWidth="149.0" style="-fx-border-color: black;" />
+            <JFXButton layoutX="936.0" layoutY="-14.0" onAction="#btnSearchOnAction" style="-fx-border-color: black;" text="Search">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></JFXButton>
+            <ImageView fx:id="imgView" fitHeight="184.0" fitWidth="212.0" layoutX="16.0" layoutY="64.0" pickOnBounds="true" />
+         </children>
+      </Pane>
+      <JFXButton fx:id="btnAddEmployee" layoutX="888.0" layoutY="238.0" onAction="#btnAddEmployeeOnAction" prefHeight="47.0" prefWidth="133.0" style="-fx-background-color: #16a085;" text="ADD EMPLOYEE" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></JFXButton>
+      <ScrollPane layoutX="13.0" layoutY="374.0" prefHeight="299.0" prefWidth="1012.0">
+         <content>
+            <AnchorPane prefHeight="289.0" prefWidth="973.0">
+               <children>
+                  <VBox fx:id="vBox" layoutX="4.0" layoutY="2.0" prefHeight="75.0" prefWidth="964.0" />
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <Pane layoutX="17.0" layoutY="334.0" prefHeight="36.0" prefWidth="1012.0" style="-fx-background-color: white;" />
+      <Label layoutX="59.0" layoutY="344.0" text="ID">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="198.0" layoutY="344.0" text="NAME">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="348.0" layoutY="344.0" text="ADDRESS">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="501.0" layoutY="344.0" text="E-MAIL">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="665.0" layoutY="344.0" text="MOBILE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="900.0" layoutY="344.0" text="ACTION">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="792.0" layoutY="344.0" text="POS.">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="677.0" prefWidth="1037.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.computerShop.controller.CustomerFormController">
+   <children>
+      <Pane layoutX="22.0" layoutY="336.0" prefHeight="36.0" prefWidth="997.0" style="-fx-background-color: white;" />
+      <JFXButton fx:id="btnAddCustomer" layoutX="904.0" layoutY="227.0" onAction="#btnAddCustomerOnAction" prefHeight="47.0" prefWidth="117.0" style="-fx-background-color: #16a085;" text="ADD CUSTOMER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXButton>
+      <Pane layoutX="27.0" layoutY="44.0" prefHeight="242.0" prefWidth="591.0" style="-fx-border-color: gray; -fx-border-width: 3; -fx-border-color: #16a085; -fx-background-color: white; -fx-border-radius: 10 0 0 0; -fx-background-radius: 10 0 0 0;">
+         <children>
+            <Label layoutX="32.0" layoutY="43.0" text="ID               :">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="32.0" layoutY="70.0" text="NAME        :">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="32.0" layoutY="97.0" text="ADDRESS  :">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="32.0" layoutY="124.0" text="MOBILE     :">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="32.0" layoutY="155.0" text="E-MAIL      :">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="32.0" layoutY="193.0" onAction="#btnVIewIdImageOnAction" prefHeight="36.0" prefWidth="117.0" style="-fx-border-color: GRAY;" text="VIEW ID IMAGE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></JFXButton>
+            <Label fx:id="lblId" layoutX="111.0" layoutY="43.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblName" layoutX="111.0" layoutY="70.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblAddress" layoutX="111.0" layoutY="97.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblMobile" layoutX="111.0" layoutY="124.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblEmail" layoutX="111.0" layoutY="155.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <TextField fx:id="txtSearchBar" layoutX="816.0" layoutY="7.0" onAction="#txtSearchBarOnAction" style="-fx-background-color: white; -fx-border-color: gray;" />
+      <JFXButton layoutX="967.0" layoutY="7.0" onAction="#btnSearchOnAction" style="-fx-border-color: gray;" text="Search">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXButton>
+      <ScrollPane fx:id="scrollPane" layoutX="23.0" layoutY="375.0" prefHeight="299.0" prefWidth="997.0">
+         <content>
+            <AnchorPane fx:id="anchorPane" prefHeight="377.0" prefWidth="978.0" style="-fx-background-color: white;">
+               <children>
+                  <VBox fx:id="vBox" layoutX="4.0" layoutY="1.0" prefHeight="75.0" prefWidth="977.0" />
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <Label layoutX="49.0" layoutY="346.0" text="ID">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="188.0" layoutY="346.0" text="NAME">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="338.0" layoutY="346.0" text="ADDRESS">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="491.0" layoutY="346.0" text="E-MAIL">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="655.0" layoutY="346.0" text="MOBILE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="851.0" layoutY="346.0" text="ACTION">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

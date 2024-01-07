@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="677.0" prefWidth="1037.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.computerShop.controller.SupplierFormController">
+   <children>
+      <ScrollPane fx:id="scrollPane" layoutX="17.0" layoutY="407.0" prefHeight="254.0" prefWidth="1007.0">
+         <content>
+            <AnchorPane prefHeight="257.0" prefWidth="1001.0">
+               <children>
+                  <VBox fx:id="vBox" layoutX="9.0" prefHeight="63.0" prefWidth="979.0" />
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <JFXButton layoutX="906.0" layoutY="261.0" onAction="#addSupplierOnAction" prefHeight="62.0" prefWidth="107.0" style="-fx-background-color: #16a085;" text="ADD SUPPLIER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <TextField fx:id="searchTxt" layoutX="756.0" layoutY="31.0" onAction="#searchOnAction" prefHeight="28.0" prefWidth="149.0" />
+      <JFXButton layoutX="906.0" layoutY="31.0" style="-fx-border-color: GRAY;" text="SEARCH" />
+      <Pane layoutX="35.0" layoutY="69.0" prefHeight="254.0" prefWidth="591.0" style="-fx-background-color: WHITE;">
+         <children>
+            <Label layoutX="46.0" layoutY="59.0" text="ID">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="43.0" layoutY="140.0" text="MOBILE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="40.0" layoutY="89.0" text="NAME">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="42.0" layoutY="114.0" text="ADDRESS">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="43.0" layoutY="166.0" text="EMAIL">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblId" layoutX="135.0" layoutY="59.0" text="ID">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblName" layoutX="135.0" layoutY="89.0" text="ID">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblAddress" layoutX="135.0" layoutY="117.0" text="ID">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblMobile" layoutX="135.0" layoutY="140.0" text="ID">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblEmail" layoutX="135.0" layoutY="166.0" text="ID">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+      <Pane layoutX="19.0" layoutY="367.0" prefHeight="36.0" prefWidth="1007.0" style="-fx-background-color: white;" />
+      <Label layoutX="46.0" layoutY="377.0" text="ID">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="185.0" layoutY="377.0" text="NAME">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="335.0" layoutY="377.0" text="ADDRESS">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="488.0" layoutY="377.0" text="E-MAIL">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="652.0" layoutY="377.0" text="MOBILE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="848.0" layoutY="377.0" text="ACTION">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+   </children>
+
+</AnchorPane>

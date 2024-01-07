@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="677.0" prefWidth="1037.0" style="-fx-background-color: A29BFE38;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.computerShop.controller.ItemFormController">
+   <children>
+      <JFXButton layoutX="901.0" layoutY="48.0" onAction="#btnAddItemOnAction" prefHeight="48.0" prefWidth="113.0" style="-fx-background-color: #16a085;" text="ADD ITEM" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <TextField fx:id="txtSearchBar" layoutX="791.0" layoutY="8.0" prefHeight="28.0" prefWidth="149.0" />
+      <JFXButton layoutX="941.0" layoutY="8.0" style="-fx-border-color: GRAY;" text="SEARCH" />
+      <ScrollPane layoutX="14.0" layoutY="106.0" prefHeight="553.0" prefWidth="1001.0">
+         <content>
+            <AnchorPane prefHeight="549.0" prefWidth="995.0">
+               <children>
+                  <VBox fx:id="vbox1" layoutX="11.0" layoutY="36.0" prefHeight="200.0" prefWidth="213.0" />
+                  <VBox fx:id="vbox2" layoutX="258.0" layoutY="36.0" prefHeight="200.0" prefWidth="213.0" />
+                  <VBox fx:id="vbox3" layoutX="510.0" layoutY="36.0" prefHeight="200.0" prefWidth="213.0" />
+                  <VBox fx:id="vbox4" layoutX="755.0" layoutY="36.0" prefHeight="200.0" prefWidth="213.0" />
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
