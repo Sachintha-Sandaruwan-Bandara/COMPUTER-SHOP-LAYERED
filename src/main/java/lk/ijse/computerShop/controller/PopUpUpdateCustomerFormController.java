@@ -8,13 +8,16 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import lk.ijse.computerShop.bo.BOFactory;
+import lk.ijse.computerShop.bo.custom.CustomerBo;
 import lk.ijse.computerShop.dto.CustomerDto;
-import lk.ijse.computerShop.model.CustomerModel;
+import lk.ijse.computerShop.entity.Customer;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class PopUpUpdateCustomerFormController {
         @FXML
@@ -34,17 +37,18 @@ public class PopUpUpdateCustomerFormController {
         private byte[]  imageBytes;
 
         private CustomerFormController customerFormController;
+    CustomerBo customerBo= (CustomerBo) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.CUSTOMER);
 
 
-        public void initialize(){
+        public void initialize() throws SQLException {
             this.customerFormController=CustomerFormController.customerFormController;
            loadCustomerDetails(customerFormController.updateCustomerId);
 
         }
 
-        private void loadCustomerDetails(String  updateCustomerId) {
-                CustomerModel customerModel = new CustomerModel();
-            CustomerDto customer = customerModel.getCustomer(updateCustomerId);
+        private void loadCustomerDetails(String  updateCustomerId) throws SQLException {
+
+            Customer customer = customerBo.getCustomer(updateCustomerId);
             txtId.setText(customer.getId());
             txtId.setEditable(false);
             txtName.setText(customer.getName());
@@ -59,7 +63,7 @@ public class PopUpUpdateCustomerFormController {
         }
 
         @FXML
-        void btnSaveOnAction(ActionEvent event) throws IOException {
+        void btnSaveOnAction(ActionEvent event) throws IOException, SQLException {
            var dto= new CustomerDto(
                     txtId.getText(),
                     txtName.getText(),
@@ -69,8 +73,8 @@ public class PopUpUpdateCustomerFormController {
                    imageBytes
 
             );
-            CustomerModel customerModel = new CustomerModel();
-            boolean isUpdated = customerModel.updateCustomer(dto);
+
+            boolean isUpdated = customerBo.updateCustomer(dto);
             if (isUpdated){
                 System.out.println("customer Updated Successfully!!!");
                 CustomerFormController.customerFormController.loadAllCustomers();

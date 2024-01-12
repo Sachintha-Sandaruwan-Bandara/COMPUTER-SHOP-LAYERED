@@ -5,7 +5,6 @@ package lk.ijse.computerShop.controller;
 */
 
 import com.jfoenix.controls.JFXButton;
-import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,15 +18,17 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.util.Duration;
+import lk.ijse.computerShop.bo.BOFactory;
+import lk.ijse.computerShop.bo.custom.CustomerBo;
 import lk.ijse.computerShop.dto.CustomerDto;
 
-import lk.ijse.computerShop.model.CustomerModel;
+import lk.ijse.computerShop.entity.Customer;
 import lk.ijse.computerShop.navigation.Navigation;
 import lk.ijse.computerShop.navigation.Routes;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class CustomerFormController {
@@ -69,9 +70,12 @@ public class CustomerFormController {
     public static CustomerFormController customerFormController;
     public static CustomerDto dto;
 
+
     public String updateCustomerId;
 
-    public void initialize() throws IOException {
+    CustomerBo customerBo= (CustomerBo) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.CUSTOMER);
+
+    public void initialize() throws IOException, SQLException {
         customerFormController = this;
         loadAllCustomers();
         searchCustomer();
@@ -89,7 +93,12 @@ public class CustomerFormController {
 
     private void searchCustomer() {
         txtSearchBar.setOnKeyReleased(keyEvent -> {
-            CustomerDto customer = new CustomerModel().getCustomer(txtSearchBar.getText());
+            Customer customer = null;
+            try {
+                customer = customerBo.getCustomer(txtSearchBar.getText());
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
             lblId.setText(customer.getId());
             lblName.setText(customer.getName());
             lblAddress.setText(customer.getAddress());
@@ -99,12 +108,12 @@ public class CustomerFormController {
         });
     }
 
-    public void loadAllCustomers() throws IOException {
+    public void loadAllCustomers() throws IOException, SQLException {
        //refresh view(clear old records before added new records)
         vBox.getChildren().clear();
 
 
-        ArrayList<CustomerDto> allCustomers = new CustomerModel().getAllCustomers();
+        ArrayList<Customer> allCustomers = customerBo.getAllCustomers();
 
         // get dto details to raws
         for (int i = 0; i < allCustomers.size(); i++) {
@@ -144,11 +153,12 @@ public class CustomerFormController {
             btnClear.setOnAction(actionEvent -> {
 
 
-
-
-
-                new CustomerModel().deleteCustomer(id);
-                    vBox1.getChildren().clear();
+                try {
+                    customerBo.deleteCustomer(id);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+                vBox1.getChildren().clear();
                     System.out.println("cleard");
 
 
@@ -192,8 +202,8 @@ public class CustomerFormController {
     }
 
     @FXML
-    void btnSearchOnAction(ActionEvent event) {
-        CustomerDto customer = new CustomerModel().getCustomer(txtSearchBar.getText());
+    void btnSearchOnAction(ActionEvent event) throws SQLException {
+        Customer customer = customerBo.getCustomer(txtSearchBar.getText());
         lblId.setText(customer.getId());
         lblName.setText(customer.getName());
         lblAddress.setText(customer.getAddress());
@@ -203,8 +213,8 @@ public class CustomerFormController {
     }
 
     @FXML
-    void btnVIewIdImageOnAction(ActionEvent event) {
-        CustomerDto customer = new CustomerModel().getCustomer(txtSearchBar.getText());
+    void btnVIewIdImageOnAction(ActionEvent event) throws SQLException {
+        Customer customer = customerBo.getCustomer(txtSearchBar.getText());
 
         Image image = new Image(new ByteArrayInputStream(customer.getImageBytes()));
         Stage primaryStage = new Stage();
@@ -224,7 +234,7 @@ public class CustomerFormController {
     }
 
     @FXML
-    void txtSearchBarOnAction(ActionEvent event) {
+    void txtSearchBarOnAction(ActionEvent event) throws SQLException {
         btnSearchOnAction(event);
 
 

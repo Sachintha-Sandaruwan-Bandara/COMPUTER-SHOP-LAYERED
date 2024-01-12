@@ -3,20 +3,12 @@ package lk.ijse.computerShop.controller;
     @author Sachi_S_Bandara
     @created 11/3/2023 - 7:49 PM
 */
-import com.github.sarxos.webcam.Webcam;
-import com.github.sarxos.webcam.WebcamPanel;
-import com.google.zxing.*;
-import com.google.zxing.client.j2se.BufferedImageLuminanceSource;
-import com.google.zxing.common.HybridBinarizer;
 
 import java.awt.image.BufferedImage;
-import java.util.EnumMap;
-import java.util.EnumSet;
-import java.util.Map;
+
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
-import javafx.css.PseudoClass;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -25,18 +17,19 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import lk.ijse.computerShop.Alert;
+import lk.ijse.computerShop.bo.BOFactory;
+import lk.ijse.computerShop.bo.custom.CustomerBo;
 import lk.ijse.computerShop.dto.CustomerDto;
-import lk.ijse.computerShop.model.CustomerModel;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import net.sf.jasperreports.view.JasperViewer;
 
-import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.regex.Pattern;
 import com.google.zxing.BarcodeFormat;
@@ -45,9 +38,6 @@ import com.google.zxing.common.BitMatrix;
 import com.google.zxing.client.j2se.MatrixToImageWriter;
 
 import javax.imageio.ImageIO;
-import javax.swing.*;
-import java.nio.file.FileSystems;
-import java.nio.file.Path;
 
 public class PopUpAddCustomerFormController {
 
@@ -69,15 +59,16 @@ public class PopUpAddCustomerFormController {
         private TextField txtName;
 
         private byte [] imageBytes;
+        CustomerBo customerBo= (CustomerBo) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.CUSTOMER);
 
-        public void initialize(){
+        public void initialize() throws SQLException {
                 setCusId();
 
 
         }
 
-        private void setCusId() {
-                String lastCustomerId = new CustomerModel().getLastCustomerId();
+        private void setCusId() throws SQLException {
+                String lastCustomerId =customerBo.getLastCustomerId();
                 txtId.setText(lastCustomerId);
                 txtId.setEditable(false);
         }
@@ -89,7 +80,7 @@ public class PopUpAddCustomerFormController {
         }
 
         @FXML
-        void btnSaveOnAction(ActionEvent event) throws IOException {
+        void btnSaveOnAction(ActionEvent event) throws IOException, SQLException {
 
                 boolean b = validateAndFlash(txtName, "([a-zA-Z\\s]+)");
                 boolean b1 = validateAndFlash(txtAddress, "([a-zA-Z0-9\\s]+)");
@@ -129,8 +120,8 @@ public class PopUpAddCustomerFormController {
 
                        CustomerDto customerDto = new CustomerDto(id, name, address, email, mobile, imageBytes);
 
-                       CustomerModel customerModel = new CustomerModel();
-                       boolean isSaved = customerModel.saveCustomer(customerDto);
+
+                       boolean isSaved = customerBo.saveCustomer(customerDto);
 
                        if (isSaved) {
                                System.out.println("customer saved!!");

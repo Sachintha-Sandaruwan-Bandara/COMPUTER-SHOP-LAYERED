@@ -4,5 +4,8 @@ package lk.ijse.computerShop.dao.custom;
     @created 1/11/2024 - 9:30 PM 
 */
 
-public interface CustomerDao {
+import lk.ijse.computerShop.dao.CrudDao;
+import lk.ijse.computerShop.entity.Customer;
+
+public interface CustomerDao extends CrudDao<Customer> {
 }

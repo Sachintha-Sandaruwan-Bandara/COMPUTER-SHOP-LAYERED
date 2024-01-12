@@ -5,33 +5,19 @@ package lk.ijse.computerShop.controller;
 */
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXScrollPane;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
 import javafx.scene.Node;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
-import lk.ijse.computerShop.dto.CustomerDto;
-import lk.ijse.computerShop.dto.EmployeeDto;
 import lk.ijse.computerShop.dto.SupplierDto;
-import lk.ijse.computerShop.model.CustomerModel;
-import lk.ijse.computerShop.model.EmployeeModel;
 import lk.ijse.computerShop.model.SupplierModel;
 import lk.ijse.computerShop.navigation.Navigation;
 import lk.ijse.computerShop.navigation.Routes;
-import org.w3c.dom.ls.LSOutput;
 
 import java.io.IOException;
 import java.util.ArrayList;

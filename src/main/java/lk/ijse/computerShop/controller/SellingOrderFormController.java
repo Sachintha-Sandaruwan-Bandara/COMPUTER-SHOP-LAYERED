@@ -15,11 +15,13 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import lk.ijse.computerShop.bo.BOFactory;
+import lk.ijse.computerShop.bo.custom.CustomerBo;
 import lk.ijse.computerShop.dto.CustomerDto;
 import lk.ijse.computerShop.dto.ItemDto;
 import lk.ijse.computerShop.dto.SellingOrderDto;
 import lk.ijse.computerShop.dto.tm.SellingOrderTm;
-import lk.ijse.computerShop.model.CustomerModel;
+import lk.ijse.computerShop.entity.Customer;
 import lk.ijse.computerShop.model.ItemModel;
 import lk.ijse.computerShop.model.SellingOrderModel;
 
@@ -77,7 +79,8 @@ public class SellingOrderFormController {
     @FXML
     private TextField txtQty;
     private final ObservableList<SellingOrderTm> obList = FXCollections.observableArrayList();
-    public void initialize(){
+    CustomerBo customerBo= (CustomerBo) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.CUSTOMER);
+    public void initialize() throws SQLException {
         loadAllCustomerId();
         loadItemCodes();
         setCellValueFactory();
@@ -85,12 +88,12 @@ public class SellingOrderFormController {
         generateNextOrderId();
     }
 
-    private void loadAllCustomerId() {
-        CustomerModel customerModel = new CustomerModel();
-        ObservableList<String> obList = FXCollections.observableArrayList();
-        ArrayList<CustomerDto> allCustomers = customerModel.getAllCustomers();
+    private void loadAllCustomerId() throws SQLException {
 
-        for (CustomerDto dto : allCustomers) {
+        ObservableList<String> obList = FXCollections.observableArrayList();
+        ArrayList<Customer> allCustomers = customerBo.getAllCustomers();
+
+        for (Customer dto : allCustomers) {
             obList.add(dto.getId());
         }
         cmbCustomerId.setItems(obList);
@@ -110,8 +113,8 @@ public class SellingOrderFormController {
     }
 
     @FXML
-    void cmbCustomerOnAction(ActionEvent event) {
-        CustomerDto customer = new CustomerModel().getCustomer(cmbCustomerId.getValue());
+    void cmbCustomerOnAction(ActionEvent event) throws SQLException {
+        Customer customer = customerBo.getCustomer(cmbCustomerId.getValue());
        lblCustomerName.setText(customer.getName());
     }
 

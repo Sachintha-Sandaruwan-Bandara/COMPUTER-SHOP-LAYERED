@@ -12,9 +12,6 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import lk.ijse.computerShop.dto.AttendenceDto;
 import lk.ijse.computerShop.model.AttendenceModel;
-import lk.ijse.computerShop.model.CustomerModel;
-import lk.ijse.computerShop.navigation.Navigation;
-import lk.ijse.computerShop.navigation.Routes;
 
 
 import java.io.IOException;

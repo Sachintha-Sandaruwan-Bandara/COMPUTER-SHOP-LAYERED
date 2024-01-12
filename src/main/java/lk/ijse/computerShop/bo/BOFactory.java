@@ -4,6 +4,9 @@ package lk.ijse.computerShop.bo;
     @created 1/11/2024 - 9:14 PM 
 */
 
+import lk.ijse.computerShop.bo.impl.CustomerBoImpl;
+import lk.ijse.computerShop.bo.impl.ItemBoImpl;
+
 public class BOFactory {
     private static BOFactory boFactory;
 
@@ -14,19 +17,16 @@ public class BOFactory {
     }
 
     public enum BOTypes{
-        CUSTOMER,ITEM,PLACE_ORDER,QUERY
+        CUSTOMER,ITEM
     }
 
-    public SuperBO getBO(BOTypes boTypes){
+    public SuperBo getBO(BOTypes boTypes){
         switch (boTypes){
             case CUSTOMER:
-                return new CustomerBOImpl();
+                return new CustomerBoImpl();
             case ITEM:
-                return new ItemBOImpl();
-            case PLACE_ORDER:
-                return new PlaceOrderBOImpl();
-            case QUERY:
-                return new QueryBOImpl();
+                return new ItemBoImpl();
+
             default:
                 return null;
         }

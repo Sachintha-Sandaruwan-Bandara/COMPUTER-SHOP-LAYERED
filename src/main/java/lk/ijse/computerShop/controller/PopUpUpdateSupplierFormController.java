@@ -9,10 +9,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import lk.ijse.computerShop.dto.CustomerDto;
-import lk.ijse.computerShop.dto.EmployeeDto;
 import lk.ijse.computerShop.dto.SupplierDto;
-import lk.ijse.computerShop.model.CustomerModel;
 import lk.ijse.computerShop.model.SupplierModel;
 
 import java.io.IOException;
